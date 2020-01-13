@@ -14,6 +14,18 @@ var words = [
 
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
 // (indexOf)
+function uniqueArray (words) {
+  return words.filter(function(v, i) {
+  	if (words.indexOf(v) == words.lastIndexOf(v))
+  		return v;
+  	else  {
+  		return v;
+  		words.splice(words[words.lastIndexOf(v)],1);
+  	}
+  })
+};
+
+console.log(uniqueArray(words));
 
 
 
@@ -29,8 +41,11 @@ var words2 = [
 ];
 
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
+function doesWordExist (words2, key) {
+  return words2.includes(key);
+}
 
-
+console.log(doesWordExist(words2, "matter"));
 
 
 var words3 = [
@@ -49,6 +64,31 @@ var words3 = [
 
 
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
+var count=0;
+ function doesWordExist (words3, key) {
+ 	
+ 	words3.filter((v) =>
+ 	{
+ 		if (v == key){
+			count++;
+ 		}
+ 	});var count=0;
+   function doesWordExist (words3, key) {
+     
+     words3.filter((v) =>
+     {
+       if (v == key){
+        count++;
+       }
+     });
+     return count;
+   }
+  
+  console.log(doesWordExist(words3, "matter"));
+ 	return count;
+ }
+
+console.log(doesWordExist(words3, "matter"));
 
 
 
@@ -73,6 +113,11 @@ let data = [
     pop: 263991379,
   }
 ]
+function sumPopulation (data) {
+	return data.reduce((sum, v, i) => 
+		data[i].country != "China" ? sum += data[i].pop : sum += 0,0  )
+}
+console.log(sumPopulation(data));
 
 
 // Use reduce method and summorize the collection like
